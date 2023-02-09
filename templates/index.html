@@ -4,13 +4,13 @@
 
 <h1>Hjemmesiden</h1>
 
-<article class="filmgrid">
-    {% for film in filmliste %}
-        <div>
-            <h1>{{film["navn"]}}</h1>
-            <img src="{{film['bilde']}}" alt="">
-        </div>
-    {% endfor%}
-</article>
+    <article class="filmgrid">
+        {% for film in filmliste %}
+            <div>
+                <h1>{{film["navn"]}}</h1>
+                <img src="{{film['bilde']}}" alt="">
+            </div>
+        {% endfor%}
+    </article>
 
 {% endblock%}

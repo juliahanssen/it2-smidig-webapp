@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from api import hent_filmliste
+from imdb import hent_filmliste
 
 app = Flask(__name__)
 

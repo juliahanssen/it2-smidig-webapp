@@ -6,8 +6,12 @@ Skriv en kort beskrivelse av appen her
 
 ## Skal gjøres
 
-- [ ] Hva er planen din?
-- [x] Eksempel på ferdig gjøremål
+- [ ] Lage HTML-mal i Flask
+- [ ] Presentere data/informasjon på siden
+- [ ] Legge til at funksjon "legg i favoritter"
+- [ ] Legge til søkefunksjon
+- [ ] Lage et fint design
+
 
 ## Logg
 

@@ -10,5 +10,6 @@ def index():
     print(f"Tempratur: {temperatur}")
     sted = "sandvika"
     return render_template("index.html", sted=sted, temperatur=temperatur)
+    
 
 app.run(debug=True)

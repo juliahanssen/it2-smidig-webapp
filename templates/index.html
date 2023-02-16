@@ -4,14 +4,7 @@
 
     <h1>Været i: {{sted}}!</h1>
     <p>Temperatur: {{temperatur}} grader celsius</p>
-
-    <article class="filmgrid">
-        {% for film in filmliste %}
-            <div>
-                <h1>{{film["navn"]}}</h1>
-                <img src="{{film['bilde']}}" alt="">
-            </div>
-        {% endfor%}
-    </article>
+    <p>Vær: {{vaer}}</p>
+    <p>Vind: {{vind}}m/s</p>
 
 {% endblock %}

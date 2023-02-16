@@ -1,15 +1,25 @@
-from flask import Flask, render_template
 import requests
-from yr import hent_temp
 
-app = Flask(__name__)
+def hent_temp(lat, lon):
+    url = f"https://api.met.no/weatherapi/locationforecast/2.0/complete?lat={lat}&lon={lon}"
+    respons = requests.get(url, headers={"User-agent": "Julias mac"})
+    data = respons.json()
+    temperatur = data["properties"]["timeseries"][0]["data"]["instant"]["details"]["air_temperature"]
+    return temperatur
 
-@app.route("/")
-def index():
-    temperatur = hent_temp(59.89, 10.52)
-    print(f"Tempratur: {temperatur}")
-    sted = "sandvika"
-    return render_template("index.html", sted=sted, temperatur=temperatur)
-    
 
-app.run(debug=True)
+def hent_vaer(lat, lon):
+    url = f"https://api.met.no/weatherapi/locationforecast/2.0/complete?lat={lat}&lon={lon}"
+    respons = requests.get(url, headers={"User-agent": "Julias mac"})
+    data = respons.json()
+    vaer =  data["properties"]["timeseries"][0]["data"]["next_12_hours"]["summary"]["symbol_code"]
+    return vaer
+
+def hent_vind(lat, lon):
+    url = f"https://api.met.no/weatherapi/locationforecast/2.0/complete?lat={lat}&lon={lon}"
+    respons = requests.get(url, headers={"User-agent": "Julias mac"})
+    data = respons.json()
+    vind = data["properties"]["timeseries"][0]["data"]["instant"]["details"]["wind_speed"]
+    return vind
+
+

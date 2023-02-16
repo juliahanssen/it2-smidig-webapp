@@ -1,12 +1,14 @@
 from flask import Flask, render_template
-from imdb import hent_filmliste
+import requests
+from yr import hent_temp
 
 app = Flask(__name__)
 
-filmliste = hent_filmliste()
-
 @app.route("/")
 def index():
-    return render_template("index.html", filmliste=filmliste)
+    temperatur = hent_temp(59.89, 10.52)
+    print(f"Tempratur: {temperatur}")
+    sted = "sandvika"
+    return render_template("index.html", sted=sted, temperatur=temperatur)
 
 app.run(debug=True)

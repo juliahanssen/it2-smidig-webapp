@@ -2,7 +2,8 @@
 
 {% block main %}
 
-<h1>Hjemmesiden</h1>
+    <h1>Været i: {{sted}}!</h1>
+    <p>Temperatur: {{temperatur}} grader celsius</p>
 
     <article class="filmgrid">
         {% for film in filmliste %}
